@@ -319,38 +319,32 @@ function showResult() {
   $('ai-text').classList.add('hidden');
 }
 
-// ── AI 해석 ───────────────────────────────────────────────────────
-$('btn-ai').addEventListener('click', async () => {
-  $('btn-ai').disabled = true;
-  $('btn-ai').textContent = '해석 중...';
-  $('ai-spinner').classList.remove('hidden');
-  $('ai-text').classList.add('hidden');
+// ── 카카오톡 공유 ─────────────────────────────────────────────────
+$('btn-share').addEventListener('click', async () => {
+  const prob = calcProbability(selectedCards);
+  const cardNames = selectedCards.map(c => c.name).join(', ');
+  const shareText = `🔮 타로 카드로 재회 가능성을 알아봤어요!\n선택한 카드: ${cardNames}\n💕 재회 확률: ${prob}%\n\n당신도 확인해보세요!`;
+  const shareUrl = location.href;
 
-  try {
-    const res = await fetch('/api/tarot', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        cards: selectedCards.map(c => ({ name: c.name, nameEn: c.nameEn, positive: c.positive, keyword: c.keyword })),
-        probability: calcProbability(selectedCards),
-      }),
-    });
-
-    const data = await res.json();
-    $('ai-spinner').classList.add('hidden');
-
-    if (data.reading) {
-      $('ai-text').textContent = data.reading;
-      $('ai-text').classList.remove('hidden');
-      $('btn-ai').textContent = '✅ AI 해석 완료';
-    } else {
-      $('btn-ai').textContent = '⚠️ 해석 불가 (API 키 필요)';
-      $('btn-ai').disabled = false;
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: '그 사람과 재회할 수 있을까?', text: shareText, url: shareUrl });
+    } catch {
+      // 사용자가 공유 취소한 경우 무시
     }
-  } catch {
-    $('ai-spinner').classList.add('hidden');
-    $('btn-ai').textContent = '⚠️ 연결 오류';
-    $('btn-ai').disabled = false;
+  } else {
+    // 공유 API 미지원 → 클립보드 복사
+    try {
+      await navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+      const msg = $('share-msg');
+      msg.textContent = '✅ 링크가 복사되었어요! 카카오톡에 붙여넣기 하세요.';
+      msg.classList.remove('hidden');
+      setTimeout(() => msg.classList.add('hidden'), 3000);
+    } catch {
+      const msg = $('share-msg');
+      msg.textContent = `공유할 주소: ${shareUrl}`;
+      msg.classList.remove('hidden');
+    }
   }
 });
 

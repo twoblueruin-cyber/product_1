@@ -397,32 +397,24 @@ body {
   font-size: 0.93rem; color: var(--text-sub); line-height: 1.8;
 }
 
-/* AI 해석 */
-.ai-wrap { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+/* 카카오톡 공유 */
+.share-wrap { display: flex; flex-direction: column; gap: 12px; align-items: center; }
 
-.btn-ai {
-  background: linear-gradient(135deg, #1d4ed8, #7c3aed);
-  color: white; border: none; border-radius: 14px;
-  padding: 14px 32px; font-size: 0.95rem; font-weight: 700;
+.btn-share {
+  display: flex; align-items: center; gap: 10px;
+  background: #FEE500; color: #191919;
+  border: none; border-radius: 14px;
+  padding: 14px 32px; font-size: 1rem; font-weight: 800;
   cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 20px rgba(29,78,216,0.4);
+  box-shadow: 0 4px 20px rgba(254,229,0,0.35);
 }
-.btn-ai:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(29,78,216,0.55); }
-.btn-ai:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-share:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(254,229,0,0.5); }
+.btn-share:active { transform: translateY(0); }
 
-.ai-spinner {
-  color: var(--text-sub); font-size: 0.9rem;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-.ai-text {
-  background: linear-gradient(135deg, rgba(29,78,216,0.1), rgba(124,58,237,0.1));
-  border: 1px solid rgba(124,58,237,0.3);
-  border-radius: 14px; padding: 20px;
-  font-size: 0.9rem; color: var(--text-sub); line-height: 1.8;
-  white-space: pre-wrap; width: 100%;
+.share-msg {
+  font-size: 0.85rem; color: var(--text-sub);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 18px;
 }
 
 .hidden { display: none !important; }
