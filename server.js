@@ -9,8 +9,12 @@ const TEST_MODE = process.env.TEST_MODE === '1';
 
 let client = null;
 if (!TEST_MODE) {
-  const { default: Anthropic } = await import('@anthropic-ai/sdk');
-  client = new Anthropic();
+  try {
+    const { default: Anthropic } = await import('@anthropic-ai/sdk');
+    client = new Anthropic();
+  } catch (e) {
+    console.warn('⚠️  Anthropic 클라이언트 초기화 실패 — TEST_MODE로 전환합니다:', e.message);
+  }
 }
 
 const app = express();

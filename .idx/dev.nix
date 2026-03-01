@@ -21,8 +21,10 @@
       enable = true;
       previews = {
         web = {
-          command = ["python3" "-m" "http.server" "$PORT" "--bind" "0.0.0.0"];
+          command = ["sh" "-c" "TEST_MODE=1 node server.js"];
           manager = "web";
+          cwd = "/home/user/product-work";
+          port = 3000;
         };
       };
     };
@@ -37,8 +39,7 @@
       };
       # Runs when the workspace is (re)started
       onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+        install-deps = "cd /home/user/product-work && npm install";
       };
     };
   };
