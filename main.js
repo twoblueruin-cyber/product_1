@@ -92,7 +92,6 @@ const CARDS = [
 
 // ── 앱 상태 ──────────────────────────────────────────────────────────
 let selectedCards = [];
-let currentFilter = 'all';
 
 // ── 유틸 ─────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
@@ -134,7 +133,6 @@ function renderGrid() {
 
     const isSelected = !!selectedCards.find(c => c.id === card.id);
     if (isSelected) el.classList.add('flipped', 'selected');
-    if (currentFilter !== 'all' && card.suit !== currentFilter) el.classList.add('filtered-out');
 
     el.innerHTML = `
       <div class="card-inner">
@@ -200,23 +198,6 @@ function updateSelectionUI() {
 
   $('btn-result').disabled = n < 3;
 }
-
-// ── 필터 ──────────────────────────────────────────────────────────
-document.querySelectorAll('.fil').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.fil').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentFilter = btn.dataset.filter;
-    document.querySelectorAll('.card-item').forEach(el => {
-      const card = CARDS.find(c => c.id === +el.dataset.id);
-      if (currentFilter === 'all' || card.suit === currentFilter) {
-        el.classList.remove('filtered-out');
-      } else {
-        el.classList.add('filtered-out');
-      }
-    });
-  });
-});
 
 // ── 확률 계산 ──────────────────────────────────────────────────────
 function calcProbability(cards) {
@@ -376,9 +357,6 @@ $('btn-ai').addEventListener('click', async () => {
 // ── 이벤트 연결 ──────────────────────────────────────────────────
 $('btn-start').addEventListener('click', () => {
   selectedCards = [];
-  currentFilter = 'all';
-  document.querySelectorAll('.fil').forEach(b => b.classList.remove('active'));
-  document.querySelector('.fil[data-filter="all"]').classList.add('active');
   renderGrid();
   updateSelectionUI();
   showScreen('screen-select');
@@ -390,9 +368,6 @@ $('btn-result').addEventListener('click', showResult);
 
 $('btn-restart').addEventListener('click', () => {
   selectedCards = [];
-  currentFilter = 'all';
-  document.querySelectorAll('.fil').forEach(b => b.classList.remove('active'));
-  document.querySelector('.fil[data-filter="all"]').classList.add('active');
   renderGrid();
   updateSelectionUI();
   showScreen('screen-select');
