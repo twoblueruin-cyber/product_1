@@ -1,3 +1,18 @@
+// ── 테마 토글 ──────────────────────────────────────────
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+});
+
+// ── 메인 앱 ────────────────────────────────────────────
 const nameInput    = document.getElementById('name-input');
 const generateBtn  = document.getElementById('generate-btn');
 const loadingEl    = document.getElementById('loading');
