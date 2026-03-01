@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://product-1-dm3.pages.dev/sitemap.xml
