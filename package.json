@@ -1,0 +1,14 @@
+{
+  "name": "nickname-generator",
+  "version": "1.0.0",
+  "description": "AI 별명 생성기",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.37.0",
+    "express": "^4.18.2"
+  }
+}
