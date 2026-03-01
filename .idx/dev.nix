@@ -21,10 +21,9 @@
       enable = true;
       previews = {
         web = {
-          command = ["sh" "-c" "TEST_MODE=1 node server.js"];
+          command = ["sh" "-c" "TEST_MODE=1 PORT=$PORT node server.js"];
           manager = "web";
           cwd = "/home/user/product-work";
-          port = 3000;
         };
       };
     };
