@@ -312,11 +312,6 @@ function showResult() {
   // 종합 해석
   $('overall').textContent = getOverallReading(selectedCards, prob);
 
-  // AI 버튼 초기화
-  $('btn-ai').disabled = false;
-  $('btn-ai').textContent = '✨ AI 타로 심층 해석 받기';
-  $('ai-spinner').classList.add('hidden');
-  $('ai-text').classList.add('hidden');
 }
 
 // ── 카카오톡 공유 ─────────────────────────────────────────────────

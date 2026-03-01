@@ -432,6 +432,98 @@ body {
 
 .hidden { display: none !important; }
 
+/* ── 정보 섹션 (웰컴 화면 하단) ─────────────────── */
+.info-section {
+  max-width: 800px; margin: 0 auto;
+  padding: 48px 24px 40px;
+  display: flex; flex-direction: column; gap: 40px;
+}
+
+.info-title {
+  font-size: 1.3rem; font-weight: 800; color: var(--text);
+  text-align: center;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+
+.info-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+
+.info-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.info-icon { font-size: 2rem; }
+
+.info-card h3 {
+  font-size: 0.95rem; font-weight: 800; color: var(--text);
+}
+
+.info-card p {
+  font-size: 0.82rem; color: var(--text-sub); line-height: 1.7;
+}
+
+.tarot-guide { display: flex; flex-direction: column; gap: 16px; }
+
+.tarot-guide h2 {
+  font-size: 1.1rem; font-weight: 800; color: var(--text);
+}
+
+.suit-grid {
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.suit-item {
+  border-radius: 12px; padding: 12px 16px;
+  display: flex; align-items: flex-start; gap: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.suit-item strong {
+  font-size: 0.85rem; font-weight: 800; color: white;
+  white-space: nowrap; min-width: 120px;
+}
+
+.suit-item span {
+  font-size: 0.8rem; color: rgba(255,255,255,0.75); line-height: 1.6;
+}
+
+.disclaimer {
+  font-size: 0.75rem; color: var(--text-muted);
+  text-align: center; line-height: 1.7;
+  padding: 12px 16px; border-top: 1px solid var(--border);
+}
+
+/* ── 사이트 푸터 ─────────────────────────────────── */
+.site-footer {
+  background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 20px 24px;
+}
+
+.footer-inner {
+  max-width: 800px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+
+.footer-brand {
+  font-weight: 800; font-size: 0.95rem; color: var(--text-sub);
+}
+
+.footer-nav {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; justify-content: center;
+  font-size: 0.78rem; color: var(--text-muted);
+}
+
+.footer-nav a {
+  color: var(--text-sub); text-decoration: none;
+}
+.footer-nav a:hover { color: var(--gold); text-decoration: underline; }
+
+.footer-sep { color: var(--border); }
+
 /* ── 색상 유틸 ───────────────────────────────────── */
 .color-red    { color: #f87171; }
 .color-orange { color: #fb923c; }
@@ -452,4 +544,8 @@ body {
   .prob-pct { font-size: 2.8rem; }
   .select-footer { flex-direction: column; gap: 10px; }
   .preview-row { justify-content: center; }
+  .info-grid { grid-template-columns: 1fr; }
+  .suit-item { flex-direction: column; gap: 4px; }
+  .suit-item strong { min-width: unset; }
+  .info-section { padding: 32px 16px 32px; }
 }
