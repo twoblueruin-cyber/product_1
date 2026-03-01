@@ -129,15 +129,23 @@ function renderGrid() {
 
   CARDS.forEach(card => {
     const el = document.createElement('div');
-    el.className = `card-item suit-${card.suit}`;
+    el.className = 'card-item';
     el.dataset.id = card.id;
-    el.innerHTML = `
-      <span class="card-emoji">${card.emoji}</span>
-      <span class="card-name">${card.name}</span>
-      <span class="card-nameen">${card.nameEn}</span>
-    `;
-    if (selectedCards.find(c => c.id === card.id)) el.classList.add('selected');
+
+    const isSelected = !!selectedCards.find(c => c.id === card.id);
+    if (isSelected) el.classList.add('flipped', 'selected');
     if (currentFilter !== 'all' && card.suit !== currentFilter) el.classList.add('filtered-out');
+
+    el.innerHTML = `
+      <div class="card-inner">
+        <div class="card-back"></div>
+        <div class="card-front suit-${card.suit}">
+          <span class="card-emoji">${card.emoji}</span>
+          <span class="card-name">${card.name}</span>
+          <span class="card-nameen">${card.nameEn}</span>
+        </div>
+      </div>
+    `;
     el.addEventListener('click', () => toggleCard(card, el));
     grid.appendChild(el);
   });
@@ -148,11 +156,12 @@ function toggleCard(card, el) {
   const idx = selectedCards.findIndex(c => c.id === card.id);
 
   if (idx !== -1) {
-    // 해제
+    // 선택 해제 + 뒷면으로 되돌리기
     selectedCards.splice(idx, 1);
-    el.classList.remove('selected');
+    el.classList.remove('selected', 'flipped');
   } else {
     if (selectedCards.length >= 3) {
+      // 3장 초과 → 흔들기
       el.animate([
         { transform: 'translateX(-6px)' }, { transform: 'translateX(6px)' },
         { transform: 'translateX(-4px)' }, { transform: 'translateX(4px)' },
@@ -160,8 +169,9 @@ function toggleCard(card, el) {
       ], { duration: 300, easing: 'ease' });
       return;
     }
+    // 클릭 → 뒤집기 + 선택
     selectedCards.push(card);
-    el.classList.add('selected');
+    el.classList.add('flipped', 'selected');
   }
 
   updateSelectionUI();
