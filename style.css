@@ -105,7 +105,7 @@ body {
 }
 
 #screen-welcome h1 {
-  font-size: 3rem; font-weight: 900; letter-spacing: -1px;
+  font-size: 2.2rem; font-weight: 900; letter-spacing: -1px;
   background: linear-gradient(135deg, #c084fc, #f59e0b);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -435,7 +435,7 @@ body {
 
 /* ── 모바일 ──────────────────────────────────────── */
 @media (max-width: 480px) {
-  #screen-welcome h1 { font-size: 2.2rem; }
+  #screen-welcome h1 { font-size: 1.6rem; }
   .orb { font-size: 4rem; }
   .cards-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; padding: 12px; }
   .card-emoji { font-size: 1.2rem; }
