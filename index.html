@@ -1,59 +1,89 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>별명 생성기 ✨</title>
-  <link href="/style.css" rel="stylesheet" />
+  <title>재회 타로 🔮</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <button id="theme-toggle" class="btn-theme" aria-label="테마 전환">🌙</button>
-  <div class="container">
-    <header class="header">
-      <div class="header-icon">✨</div>
-      <h1>별명 생성기</h1>
-      <p class="subtitle">이름을 입력하면 AI가 재미있는 별명을 지어드려요!</p>
-    </header>
 
-    <div class="input-card">
-      <div class="input-row">
-        <input
-          type="text"
-          id="name-input"
-          class="name-input"
-          placeholder="이름을 입력하세요 (예: 민준, Sarah)"
-          maxlength="20"
-          autocomplete="off"
-        />
-        <button id="generate-btn" class="btn-generate">
-          <span class="btn-text">별명 지어주기</span>
-          <span class="btn-icon">→</span>
-        </button>
+  <button id="theme-toggle" class="btn-theme" aria-label="테마 전환">☀️</button>
+
+  <!-- ① 웰컴 화면 -->
+  <section id="screen-welcome" class="screen active">
+    <div class="welcome-wrap">
+      <div class="orb">🔮</div>
+      <h1>재회 타로</h1>
+      <p class="sub">78장의 유니버셜 타로카드로<br>두 사람의 재회 가능성을 알아보세요</p>
+      <p class="hint">마음속으로 그 사람을 떠올리며<br>이끌리는 카드 <strong>3장</strong>을 선택하세요</p>
+      <button id="btn-start" class="btn-cta">카드 선택 시작하기 →</button>
+    </div>
+  </section>
+
+  <!-- ② 카드 선택 화면 -->
+  <section id="screen-select" class="screen">
+    <div class="select-top">
+      <button class="btn-nav" id="btn-back">← 처음으로</button>
+      <span class="select-title">마음이 이끄는 카드 <strong>3장</strong>을 고르세요</span>
+      <span id="sel-count" class="sel-count">0 / 3</span>
+    </div>
+
+    <div class="filter-row">
+      <button class="fil active" data-filter="all">전체</button>
+      <button class="fil" data-filter="major">🌟 메이저</button>
+      <button class="fil" data-filter="wands">🔥 완드</button>
+      <button class="fil" data-filter="cups">💧 컵</button>
+      <button class="fil" data-filter="swords">⚔️ 소드</button>
+      <button class="fil" data-filter="pentacles">💎 펜타클</button>
+    </div>
+
+    <div id="cards-grid" class="cards-grid"></div>
+
+    <div class="select-footer">
+      <div class="preview-row">
+        <div class="preview-slot" id="prev-0"><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-1"><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-2"><span class="prev-empty">?</span></div>
       </div>
-      <p class="input-hint">한국어, 영어 이름 모두 가능해요 🌏</p>
+      <button id="btn-result" class="btn-cta" disabled>결과 보기 →</button>
     </div>
+  </section>
 
-    <!-- 로딩 -->
-    <div id="loading" class="loading hidden">
-      <div class="loading-ring"></div>
-      <p id="loading-text">AI가 별명을 생각하는 중...</p>
-    </div>
-
-    <!-- 에러 -->
-    <div id="error-box" class="error-box hidden">
-      <span class="error-icon">⚠️</span>
-      <p id="error-msg">오류가 발생했습니다.</p>
-    </div>
-
-    <!-- 결과 -->
-    <div id="results" class="results hidden">
-      <div class="results-header">
-        <h2 id="results-title" class="results-title"></h2>
-        <button id="regenerate-btn" class="btn-regen">다시 만들기 ↺</button>
+  <!-- ③ 결과 화면 -->
+  <section id="screen-result" class="screen">
+    <div class="result-wrap">
+      <div class="result-top">
+        <button class="btn-nav" id="btn-restart">↺ 다시 하기</button>
+        <h2>🔮 재회 타로 결과</h2>
       </div>
-      <div id="nicknames-grid" class="nicknames-grid"></div>
+
+      <div id="result-cards" class="result-cards"></div>
+
+      <div class="prob-box">
+        <div class="prob-title">재회 확률</div>
+        <div class="prob-track">
+          <div id="prob-bar" class="prob-bar"></div>
+        </div>
+        <div id="prob-pct" class="prob-pct">0%</div>
+        <div id="prob-msg" class="prob-msg"></div>
+      </div>
+
+      <div id="balance" class="balance-row"></div>
+
+      <h3 class="sec-title">카드별 해석</h3>
+      <div id="card-readings" class="card-readings"></div>
+
+      <h3 class="sec-title">종합 해석</h3>
+      <div id="overall" class="overall-box"></div>
+
+      <div class="ai-wrap">
+        <button id="btn-ai" class="btn-ai">✨ AI 타로 심층 해석 받기</button>
+        <div id="ai-spinner" class="ai-spinner hidden">🔮 AI가 카드를 해석하는 중...</div>
+        <div id="ai-text" class="ai-text hidden"></div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <script type="module" src="/main.js"></script>
 </body>

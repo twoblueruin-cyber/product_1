@@ -1,7 +1,7 @@
 {
-  "name": "nickname-generator",
+  "name": "tarot-reunion",
   "version": "1.0.0",
-  "description": "AI 별명 생성기",
+  "description": "재회 타로 - 78장 유니버셜 타로카드 재회 확률 측정",
   "type": "module",
   "scripts": {
     "start": "node server.js",
