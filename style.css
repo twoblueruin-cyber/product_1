@@ -40,13 +40,33 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* ── 사이트 헤더 ─────────────────────────────────── */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 24px;
+  background: rgba(10,1,24,0.9);
+  border-bottom: 1px solid rgba(245,158,11,0.15);
+  position: sticky; top: 0; z-index: 999;
+  backdrop-filter: blur(8px);
+}
+.site-logo {
+  font-size: 1.05rem; font-weight: 900; color: var(--gold);
+  text-decoration: none; white-space: nowrap;
+}
+.site-nav { display: flex; gap: 4px; align-items: center; flex: 1; margin: 0 16px; }
+.site-nav a {
+  color: var(--text-sub); text-decoration: none;
+  font-size: 0.82rem; padding: 5px 10px; border-radius: 8px;
+  transition: color 0.2s, background 0.2s; white-space: nowrap;
+}
+.site-nav a:hover { color: var(--gold); background: rgba(245,158,11,0.08); }
+
 /* ── 테마 토글 ───────────────────────────────────── */
 .btn-theme {
-  position: fixed; top: 16px; right: 16px;
-  width: 40px; height: 40px; border-radius: 50%;
+  width: 36px; height: 36px; border-radius: 50%;
   background: var(--surface2); border: 1px solid var(--border);
-  color: var(--text); font-size: 1.1rem;
-  cursor: pointer; z-index: 1000;
+  color: var(--text); font-size: 1rem;
+  cursor: pointer; z-index: 1000; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   transition: transform 0.2s, background 0.3s;
 }
