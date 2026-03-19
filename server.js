@@ -8,7 +8,13 @@ const __dirname = dirname(__filename);
 
 const app = express();
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(__dirname, {
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.js') || filePath.endsWith('.css')) {
+      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    }
+  }
+}));
 
 // 로컬에서 AI 해석 테스트 (ANTHROPIC_API_KEY 환경변수 필요)
 app.post('/api/tarot', async (req, res) => {

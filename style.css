@@ -184,10 +184,12 @@ body {
   position: relative;
   user-select: none;
   perspective: 800px;
-  transition: transform 0.15s;
+  transform: rotate(var(--rot, 0deg));
+  transition: transform 0.3s ease;
 }
 
-.card-item:hover       { transform: translateY(-4px) scale(1.04); }
+.card-item:hover       { transform: rotate(var(--rot, 0deg)) translateY(-6px) scale(1.06); }
+.card-item.flipped     { transform: rotate(0deg); }
 .card-item.selected    { box-shadow: var(--shadow-gold); }
 .card-item.filtered-out{ display: none; }
 

@@ -121,17 +121,34 @@ themeBtn.addEventListener('click', () => {
   themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
 });
 
+// ── Fisher-Yates 셔플 ─────────────────────────────────────────────
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 // ── 카드 그리드 렌더링 ─────────────────────────────────────────────
 function renderGrid() {
   const grid = $('cards-grid');
   grid.innerHTML = '';
 
-  CARDS.forEach(card => {
+  // 완전 랜덤 셔플 — DOM 삽입 순서 자체를 매번 새로 섞음
+  const shuffled = shuffle(CARDS);
+
+  shuffled.forEach(card => {
     const el = document.createElement('div');
     el.className = 'card-item';
     el.dataset.id = card.id;
 
     const isSelected = !!selectedCards.find(c => c.id === card.id);
+    if (!isSelected) {
+      const rot = (Math.random() * 10 - 5).toFixed(1);
+      el.style.setProperty('--rot', `${rot}deg`);
+    }
     if (isSelected) el.classList.add('flipped', 'selected');
 
     el.innerHTML = `
