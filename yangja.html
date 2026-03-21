@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>양자택일 타로 🔮 - 재회 vs 새로운 인연, 어느 길이 맞을까?</title>
+  <meta name="description" content="78장의 유니버셜 타로카드로 재회와 새로운 인연 중 어느 길이 나에게 맞는지 알아보세요. 카드 5장으로 현재 상황, 재회/새인연의 과정과 결과를 비교 분석합니다." />
+  <meta name="keywords" content="양자택일 타로, 재회 vs 새인연, 타로카드, 타로 점, 연애 타로, 재회 타로, 새로운 인연 타로, 무료 타로" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bittaro.cloud/yangja.html" />
+  <meta property="og:title" content="양자택일 타로 🔮 - 재회 vs 새로운 인연" />
+  <meta property="og:description" content="78장의 유니버셜 타로카드로 재회와 새로운 인연 중 어느 길이 맞는지 무료로 알아보세요. 카드 5장으로 두 경로를 비교 분석합니다." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="양자택일 타로 🔮" />
+  <meta name="twitter:description" content="재회 vs 새로운 인연 — 타로카드로 어느 길이 맞는지 알아보세요." />
+  <link rel="canonical" href="https://bittaro.cloud/yangja.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="빛타로" />
+  <meta name="theme-color" content="#160028" />
+  <meta name="application-name" content="빛타로" />
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+  <link rel="stylesheet" href="/style.css?v=3" />
+  <meta name="google-adsense-account" content="ca-pub-5072294874294817">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5072294874294817"
+     crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "빛타로 — 양자택일 타로",
+    "url": "https://bittaro.cloud/yangja.html",
+    "description": "78장의 유니버셜 타로카드로 재회와 새로운 인연 중 어느 길이 맞는지 무료로 알아보세요.",
+    "applicationCategory": "EntertainmentApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "ko-KR",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+    "publisher": { "@type": "Organization", "name": "빛타로" }
+  }
+  </script>
+  <style>
+    /* ── 양자택일 전용 스타일 ── */
+    .nav-active-yangja { color: var(--gold) !important; background: rgba(245,158,11,0.12) !important; font-weight: 700; }
+
+    /* 카드 뒷면 색상 */
+    .card-back-yangja {
+      background: linear-gradient(135deg, #1a0d35 0%, #2d1b69 50%, #1a0d35 100%);
+      border: 1.5px solid rgba(245,158,11,0.3);
+    }
+    .card-back-yangja::after {
+      content: '⚖️';
+      font-size: 1.4rem;
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; height: 100%;
+    }
+
+    /* CTA 버튼 양자택일 색상 */
+    .btn-cta-yangja {
+      background: linear-gradient(135deg, #7c3aed 0%, #f59e0b 100%);
+      box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+    }
+    .btn-cta-yangja:hover:not(:disabled) {
+      box-shadow: 0 8px 28px rgba(124,58,237,0.5);
+    }
+
+    /* 포지션 레이블 */
+    .mini-pos-label {
+      font-size: 0.68rem; font-weight: 700;
+      text-align: center; margin-bottom: 2px;
+      line-height: 1;
+    }
+
+    /* 프리뷰 슬롯 5개 */
+    .preview-row-5 {
+      display: flex; gap: 6px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 14px;
+    }
+    .preview-slot {
+      width: 60px; height: 76px;
+      border: 1.5px dashed rgba(245,158,11,0.3);
+      border-radius: 8px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2px;
+      transition: all 0.25s;
+      background: var(--surface2);
+      font-size: 0.72rem;
+    }
+    .preview-slot.filled {
+      border-style: solid; border-color: rgba(245,158,11,0.6);
+      background: var(--surface);
+    }
+
+    /* 결과 화면 포지션 태그 */
+    .pos-tag {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 20px;
+      border: 1px solid; margin-bottom: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    /* 현재 상황 카드 (큰 버전) */
+    .status-card-wrap {
+      display: flex; justify-content: center;
+      margin-bottom: 28px;
+    }
+    .result-card-status {
+      min-width: 130px; max-width: 160px;
+    }
+
+    /* 두 경로 비교 레이아웃 */
+    .paths-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .path-box {
+      background: var(--surface2);
+      border-radius: 16px;
+      padding: 16px 12px;
+      border: 1.5px solid var(--border);
+    }
+    .path-box-reunion { border-color: rgba(124,58,237,0.35); }
+    .path-box-newlove  { border-color: rgba(245,158,11,0.35); }
+
+    .path-title {
+      font-size: 0.85rem; font-weight: 800;
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .path-title-reunion { color: #a78bfa; }
+    .path-title-newlove  { color: #fbbf24; }
+
+    .path-cards {
+      display: flex; gap: 8px; justify-content: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .path-cards .result-card {
+      flex: 1; min-width: 90px; max-width: 130px;
+    }
+
+    /* 에너지 바 */
+    .path-score-label {
+      font-size: 0.72rem; color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .path-track {
+      height: 8px; background: var(--surface);
+      border-radius: 99px; overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .path-bar {
+      height: 100%; width: 0%;
+      border-radius: 99px;
+      transition: width 0.05s linear;
+    }
+    .path-pct {
+      font-size: 1.1rem; font-weight: 900;
+    }
+
+    /* 판정 박스 */
+    .verdict-inner {
+      border: 2px solid;
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 28px;
+    }
+    .verdict-icon { font-size: 2rem; flex-shrink: 0; }
+    .verdict-label { font-size: 1rem; font-weight: 800; margin-bottom: 2px; }
+    .verdict-sub { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* 카드별 해석 포지션 레이블 */
+    .reading-pos-label {
+      font-size: 0.72rem; font-weight: 700;
+      margin-bottom: 4px; letter-spacing: 0.02em;
+    }
+
+    /* 정보 섹션 */
+    .spread-guide {
+      margin: 40px auto 0;
+      max-width: 680px;
+      padding: 0 16px;
+    }
+    .spread-guide h2 {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--gold); margin-bottom: 16px;
+      text-align: center;
+    }
+    .spread-positions {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 32px;
+    }
+    .spread-pos-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--surface2);
+      border-radius: 12px; padding: 12px 14px;
+      border: 1px solid var(--border);
+    }
+    .spread-pos-num {
+      font-size: 1rem; font-weight: 900; flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .spread-pos-content strong { font-size: 0.9rem; font-weight: 700; display: block; margin-bottom: 2px; }
+    .spread-pos-content span { font-size: 0.8rem; color: var(--text-sub); }
+
+    @media (max-width: 600px) {
+      .paths-compare { grid-template-columns: 1fr; }
+      .path-cards { flex-direction: column; align-items: center; }
+      .path-cards .result-card { max-width: 200px; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 사이트 헤더 내비게이션 -->
+  <header class="site-header">
+    <a href="/" class="site-logo">🔮 빛타로</a>
+    <nav class="site-nav">
+      <a href="/jaehoe.html">재회 타로</a>
+      <a href="/sokmaeul.html">속마음 타로</a>
+      <a href="/yangja.html" class="nav-active-yangja">양자택일 타로</a>
+      <a href="/about.html">서비스 소개</a>
+    </nav>
+    <button id="theme-toggle" class="btn-theme" aria-label="테마 전환">☀️</button>
+  </header>
+
+  <!-- ① 웰컴 화면 -->
+  <section id="screen-welcome" class="screen active">
+    <div class="welcome-wrap">
+      <div class="orb">⚖️</div>
+      <h1>재회 vs 새로운 인연<br>어느 길이 당신에게 맞을까?</h1>
+      <p class="sub">78장의 유니버셜 타로카드로<br>두 갈래 인생 경로를 비교해드릴게요</p>
+      <p class="hint">마음속으로 그 사람을 떠올리며<br>이끌리는 카드 <strong>5장</strong>을 순서대로 선택하세요</p>
+      <button id="btn-start" class="btn-cta btn-cta-yangja">카드 선택 시작하기 →</button>
+    </div>
+
+    <div class="info-section">
+      <div class="spread-guide">
+        <h2>양자택일 5장 스프레드 안내</h2>
+        <div class="spread-positions">
+          <div class="spread-pos-item">
+            <div class="spread-pos-num" style="background:rgba(167,139,250,0.2);color:#a78bfa">1</div>
+            <div class="spread-pos-content">
+              <strong>🔮 현재 상황</strong>
+              <span>지금 두 사람 사이의 에너지와 상황을 나타냅니다. 모든 해석의 기반이 되는 카드입니다.</span>
+            </div>
+          </div>
+          <div class="spread-pos-item">
+            <div class="spread-pos-num" style="background:rgba(124,58,237,0.2);color:#8b5cf6">2</div>
+            <div class="spread-pos-content">
+              <strong>💜 재회의 과정</strong>
+              <span>그 사람과 다시 이어지려 할 때 거쳐야 할 과정과 노력을 보여줍니다.</span>
+            </div>
+          </div>
+          <div class="spread-pos-item">
+            <div class="spread-pos-num" style="background:rgba(109,40,217,0.2);color:#7c3aed">3</div>
+            <div class="spread-pos-content">
+              <strong>🌹 재회의 결과</strong>
+              <span>재회가 이루어졌을 때 두 사람의 미래가 어떻게 전개될지를 보여줍니다.</span>
+            </div>
+          </div>
+          <div class="spread-pos-item">
+            <div class="spread-pos-num" style="background:rgba(245,158,11,0.2);color:#f59e0b">4</div>
+            <div class="spread-pos-content">
+              <strong>🌟 새로운 인연의 과정</strong>
+              <span>새로운 사람을 만나는 여정에서 겪게 될 과정과 에너지를 나타냅니다.</span>
+            </div>
+          </div>
+          <div class="spread-pos-item">
+            <div class="spread-pos-num" style="background:rgba(251,146,60,0.2);color:#fb923c">5</div>
+            <div class="spread-pos-content">
+              <strong>🌸 새로운 인연의 결과</strong>
+              <span>새로운 사람과 함께했을 때 펼쳐질 미래와 가능성을 보여줍니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="info-title">양자택일 타로로 인연의 갈림길 알아보기</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">⚖️</div>
+          <h3>두 경로 비교 분석</h3>
+          <p>재회와 새로운 인연, 두 가지 경로의 에너지를 각각 분석하여 어느 길이 더 순조로운지 타로카드의 시각으로 비교해드립니다. 5장의 카드가 현재 상황부터 각 경로의 결과까지 상세히 보여줍니다.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🃏</div>
+          <h3>유니버셜 타로 78장</h3>
+          <p>메이저 아르카나 22장과 마이너 아르카나 56장으로 구성된 정통 타로카드를 사용합니다. 각 카드의 고유한 에너지가 5개의 포지션에서 서로 다른 의미로 해석됩니다.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✨</div>
+          <h3>직관으로 5장을 선택하세요</h3>
+          <p>마음속으로 그 사람을 떠올리며 직관적으로 이끌리는 카드를 순서대로 5장 골라보세요. 첫 번째 카드부터 다섯 번째 카드까지, 무의식이 이끄는 선택이 진정한 답을 품고 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h2>자주 묻는 질문 (FAQ)</h2>
+        <div class="faq-item">
+          <h3>양자택일 타로는 어떻게 활용하나요?</h3>
+          <p>재회와 새로운 인연 사이에서 고민하고 있을 때, 타로카드를 통해 각 경로의 에너지와 가능성을 비교해볼 수 있습니다. 5장의 카드가 현재 상황(1장)과 재회 경로(2장), 새로운 인연 경로(2장)를 각각 보여주며 두 갈래 길을 비교 분석해드립니다.</p>
+        </div>
+        <div class="faq-item">
+          <h3>카드를 어떤 순서로 선택해야 하나요?</h3>
+          <p>특별한 규칙은 없어요. 마음이 이끄는 카드를 차례대로 선택하면 됩니다. 첫 번째로 선택한 카드가 현재 상황, 두 번째와 세 번째가 재회 경로, 네 번째와 다섯 번째가 새로운 인연 경로에 배치됩니다.</p>
+        </div>
+        <div class="faq-item">
+          <h3>타로 결과가 한쪽 경로를 강하게 권하면 따라야 하나요?</h3>
+          <p>타로카드는 현재의 에너지 흐름을 보여주는 도구이며, 최종 선택은 항상 당신에게 있습니다. 결과가 어떻게 나오든, 결국 가장 중요한 것은 당신 마음이 진정으로 원하는 것입니다. 타로는 그 마음을 들여다보는 도구로 활용하세요.</p>
+        </div>
+        <div class="faq-item">
+          <h3>두 경로의 에너지가 비슷하게 나오면 어떻게 해야 하나요?</h3>
+          <p>두 경로의 에너지가 비슷하다는 것은, 어느 쪽이든 당신의 노력과 태도에 따라 행복한 결과를 만들 수 있다는 의미입니다. 이럴 때일수록 자신의 내면의 목소리에 더욱 귀 기울여보세요.</p>
+        </div>
+        <div class="faq-item">
+          <h3>무료로 이용할 수 있나요?</h3>
+          <p>빛타로의 양자택일 타로 서비스는 완전 무료입니다. 회원가입이나 로그인 없이 바로 이용하실 수 있으며, 횟수 제한 없이 원하는 만큼 카드를 선택하실 수 있습니다.</p>
+        </div>
+      </div>
+
+      <p class="disclaimer">본 서비스는 오락 및 자기 성찰의 목적으로 제공됩니다. 타로카드 결과는 참고용이며, 중요한 결정은 전문가와 상담하시기 바랍니다.</p>
+    </div>
+  </section>
+
+  <!-- ② 카드 선택 화면 -->
+  <section id="screen-select" class="screen">
+    <div class="select-top">
+      <button class="btn-nav" id="btn-back">← 처음으로</button>
+      <span class="select-title">마음이 이끄는 카드 <strong>5장</strong>을 고르세요</span>
+      <span id="sel-count" class="sel-count">0 / 5</span>
+    </div>
+
+    <div id="cards-grid" class="cards-grid"></div>
+
+    <div class="select-footer">
+      <div class="preview-row-5">
+        <div class="preview-slot" id="prev-0"><div class="mini-pos-label" style="color:#a78bfa;opacity:0.5">🔮</div><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-1"><div class="mini-pos-label" style="color:#8b5cf6;opacity:0.5">💜</div><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-2"><div class="mini-pos-label" style="color:#7c3aed;opacity:0.5">🌹</div><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-3"><div class="mini-pos-label" style="color:#f59e0b;opacity:0.5">🌟</div><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-4"><div class="mini-pos-label" style="color:#fb923c;opacity:0.5">🌸</div><span class="prev-empty">?</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px;font-size:0.72rem;color:var(--text-muted)">
+        <span>🔮 현재상황</span><span>💜 재회과정</span><span>🌹 재회결과</span><span>🌟 새인연과정</span><span>🌸 새인연결과</span>
+      </div>
+      <button id="btn-result" class="btn-cta btn-cta-yangja" disabled>결과 보기 →</button>
+    </div>
+  </section>
+
+  <!-- ③ 결과 화면 -->
+  <section id="screen-result" class="screen">
+    <div class="result-wrap">
+      <div class="result-top">
+        <button class="btn-nav" id="btn-restart">↺ 다시 하기</button>
+        <h2>⚖️ 양자택일 타로 결과</h2>
+      </div>
+
+      <!-- 현재 상황 카드 -->
+      <h3 class="sec-title">현재 상황</h3>
+      <div class="status-card-wrap" id="status-card"></div>
+
+      <!-- 두 경로 비교 -->
+      <h3 class="sec-title">두 경로 에너지 비교</h3>
+      <div class="paths-compare">
+        <!-- 재회 경로 -->
+        <div class="path-box path-box-reunion">
+          <div class="path-title path-title-reunion">💜 재회 경로</div>
+          <div class="path-cards" id="reunion-cards"></div>
+          <div class="path-score-label">재회 에너지</div>
+          <div class="path-track"><div id="reunion-bar" class="path-bar"></div></div>
+          <div id="reunion-pct" class="path-pct">0%</div>
+        </div>
+        <!-- 새로운 인연 경로 -->
+        <div class="path-box path-box-newlove">
+          <div class="path-title path-title-newlove">🌟 새로운 인연 경로</div>
+          <div class="path-cards" id="newlove-cards"></div>
+          <div class="path-score-label">새인연 에너지</div>
+          <div class="path-track"><div id="newlove-bar" class="path-bar"></div></div>
+          <div id="newlove-pct" class="path-pct">0%</div>
+        </div>
+      </div>
+
+      <!-- 판정 -->
+      <div id="verdict-box"></div>
+
+      <!-- 카드별 해석 -->
+      <h3 class="sec-title">카드별 해석</h3>
+      <div id="card-readings" class="card-readings"></div>
+
+      <!-- 종합 해석 -->
+      <h3 class="sec-title">종합 해석</h3>
+      <div id="overall" class="overall-box"></div>
+
+      <div class="share-wrap">
+        <button id="btn-share" class="btn-share">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 5.805 2 10.5c0 2.9 1.6 5.484 4.1 7.13L5 21l4.39-2.31C10.2 18.88 11.09 19 12 19c5.523 0 10-3.806 10-8.5S17.523 2 12 2z"/></svg>
+          카카오톡으로 공유하기 (복채)
+        </button>
+        <div id="share-msg" class="share-msg hidden"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">🔮 빛타로</div>
+      <nav class="footer-nav" aria-label="사이트 정보">
+        <a href="/about.html">서비스 소개</a>
+        <span class="footer-sep">|</span>
+        <a href="/privacy.html">개인정보처리방침</a>
+        <span class="footer-sep">|</span>
+        <span>© 2025 빛타로. 본 서비스는 오락 목적으로 제공됩니다.</span>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="module" src="/yangja.js?v=1"></script>
+</body>
+</html>

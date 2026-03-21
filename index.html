@@ -81,10 +81,10 @@
 
     .service-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
       width: 100%;
-      max-width: 680px;
+      max-width: 900px;
     }
 
     .service-card {
@@ -136,6 +136,18 @@
       box-shadow: 0 12px 40px rgba(219, 39, 119, 0.3);
     }
     .service-card-heart:hover::before { opacity: 1; }
+
+    .service-card-balance {
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+    .service-card-balance::before {
+      background: radial-gradient(circle at 30% 30%, rgba(245,158,11,0.10), transparent 70%);
+    }
+    .service-card-balance:hover {
+      border-color: rgba(245, 158, 11, 0.75);
+      box-shadow: 0 12px 40px rgba(245, 158, 11, 0.25);
+    }
+    .service-card-balance:hover::before { opacity: 1; }
 
     .sc-icon {
       font-size: 2.8rem;
@@ -213,6 +225,18 @@
       box-shadow: 0 4px 16px rgba(219, 39, 119, 0.35);
     }
 
+    .sc-badge-balance {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .sc-cta-balance {
+      background: linear-gradient(135deg, #7c3aed, #f59e0b);
+      color: white;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+    }
+
     .service-card:hover .sc-cta {
       transform: translateX(4px);
     }
@@ -239,7 +263,7 @@
       text-align: center;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       .service-cards { grid-template-columns: 1fr; max-width: 380px; }
       .landing-wrap { padding: 28px 16px 48px; }
     }
@@ -253,6 +277,7 @@
     <nav class="site-nav">
       <a href="/jaehoe.html">재회 타로</a>
       <a href="/sokmaeul.html">속마음 타로</a>
+      <a href="/yangja.html">양자택일 타로</a>
       <a href="/about.html">서비스 소개</a>
       <a href="/privacy.html">개인정보처리방침</a>
     </nav>
@@ -295,6 +320,21 @@
         </div>
         <div class="sc-desc">카드 3장으로 상대방의 현재 감정 상태와 속마음을 읽어드립니다. 그리움·미련·갈등 등을 분석합니다.</div>
         <span class="sc-cta sc-cta-heart">시작하기 →</span>
+      </a>
+
+      <!-- 양자택일 타로 -->
+      <a href="/yangja.html" class="service-card service-card-balance">
+        <span class="sc-icon">⚖️</span>
+        <span class="sc-badge sc-badge-balance">두 경로 비교 분석</span>
+        <div class="sc-title">양자택일 타로</div>
+        <div class="sc-question">"재회할까, 새로운 인연을 찾을까?"</div>
+        <div class="sc-features">
+          <span class="sc-feature">5장 스프레드</span>
+          <span class="sc-feature">경로별 에너지 %</span>
+          <span class="sc-feature">타로 추천 경로</span>
+        </div>
+        <div class="sc-desc">카드 5장으로 재회와 새로운 인연 두 경로의 과정과 결과를 비교 분석해드립니다. 갈림길에서 타로의 목소리를 들어보세요.</div>
+        <span class="sc-cta sc-cta-balance">시작하기 →</span>
       </a>
 
     </div>
