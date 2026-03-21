@@ -1,0 +1,146 @@
+/* ── 속마음 타로 전용 스타일 ──────────────────────────────────────── */
+
+/* 네비게이션 활성 탭 */
+.nav-active {
+  color: var(--gold) !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  font-weight: 700;
+}
+
+/* 속마음 전용 CTA 버튼 (보라-핑크 그라데이션) */
+.btn-cta-heart {
+  background: linear-gradient(135deg, #7c3aed, #db2777) !important;
+  box-shadow: 0 4px 20px rgba(219, 39, 119, 0.35) !important;
+}
+.btn-cta-heart:hover:not(:disabled) {
+  box-shadow: 0 8px 28px rgba(219, 39, 119, 0.5) !important;
+}
+
+/* 카드 뒷면 속마음 전용 (보라-핑크 패턴) */
+.card-back-heart {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(219,39,119,0.12) 0px,
+      rgba(219,39,119,0.12) 2px,
+      transparent 2px,
+      transparent 12px
+    ),
+    linear-gradient(135deg, #3b0764 0%, #1e1040 50%, #4a0a2e 100%);
+  border: 2px solid rgba(219,39,119,0.3);
+}
+.card-back-heart::after {
+  content: '💜';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  opacity: 0.6;
+}
+
+/* 속마음 지수 바 색상 */
+.prob-bar-heart {
+  background: linear-gradient(90deg, #7c3aed88, #db2777) !important;
+}
+
+/* ── 감정 유형 수트 색상 ──────────────────────────────────────────── */
+.mood-그리움 { border-left-color: #a855f7 !important; }
+.mood-미련   { border-left-color: #8b5cf6 !important; }
+.mood-기다림 { border-left-color: #06b6d4 !important; }
+.mood-갈등   { border-left-color: #f59e0b !important; }
+.mood-새출발 { border-left-color: #22c55e !important; }
+
+/* ── 지배 감정 박스 ──────────────────────────────────────────────── */
+.mood-box {
+  margin: 16px 0;
+}
+
+.mood-dominant {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface2);
+  border: 1px solid var(--mood-color, #a855f7);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--mood-color, #a855f7) 20%, transparent);
+}
+
+.mood-emoji {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.mood-content {
+  flex: 1;
+}
+
+.mood-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.mood-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--mood-color, #a855f7);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.mood-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+/* ── AI 심층 해석 섹션 ───────────────────────────────────────────── */
+.ai-section {
+  margin: 16px 0;
+}
+
+.ai-box {
+  background: var(--surface2);
+  border: 1px solid rgba(219, 39, 119, 0.25);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.08);
+}
+
+.ai-loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 12px 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.ai-text {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+/* ── 공유 버튼 속마음 전용 ───────────────────────────────────────── */
+.btn-share-heart {
+  background: linear-gradient(135deg, #7c3aed, #db2777) !important;
+}
+.btn-share-heart:hover {
+  filter: brightness(1.1);
+}
+
+/* ── orb 색상 재정의 ────────────────────────────────────────────── */
+.welcome-wrap .orb {
+  /* 기존 style.css의 orb 스타일 위에 색상만 덮어씌움 */
+  background: radial-gradient(circle at 40% 35%, #db2777, #7c3aed 60%, #4a0a2e);
+  box-shadow: 0 0 60px rgba(219, 39, 119, 0.6), 0 0 120px rgba(124, 58, 237, 0.3);
+}
