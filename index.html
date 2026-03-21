@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>재회 타로 🔮 - 그 사람과 다시 만날 수 있을까?</title>
-  <meta name="description" content="78장의 유니버셜 타로카드로 재회 가능성을 알아보세요. 마음이 이끄는 카드 3장을 선택하면 두 사람의 재회 확률과 각 카드의 상세한 해석을 무료로 확인할 수 있습니다." />
-  <meta name="keywords" content="재회 타로, 타로카드, 타로 점, 재회 가능성, 연애 타로, 이별 후 재회, 타로 운세" />
+  <title>빛타로 🔮 - 무료 연애 타로카드 운세</title>
+  <meta name="description" content="78장의 유니버셜 타로카드로 재회 가능성과 상대방 속마음을 무료로 알아보세요. 재회 타로, 속마음 타로 두 가지 서비스를 제공합니다." />
+  <meta name="keywords" content="빛타로, 타로카드, 재회 타로, 속마음 타로, 연애 타로, 무료 타로, 타로 운세" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bittaro.cloud/" />
-  <meta property="og:title" content="재회 타로 🔮 - 그 사람과 다시 만날 수 있을까?" />
-  <meta property="og:description" content="78장의 유니버셜 타로카드로 재회 가능성을 무료로 알아보세요. 카드 3장을 선택하면 확률과 상세 해석을 제공합니다." />
+  <meta property="og:title" content="빛타로 🔮 - 무료 연애 타로카드 운세" />
+  <meta property="og:description" content="78장의 유니버셜 타로카드로 재회 가능성과 상대방 속마음을 무료로 알아보세요." />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="재회 타로 🔮" />
-  <meta name="twitter:description" content="78장의 유니버셜 타로카드로 재회 가능성을 무료로 알아보세요." />
+  <meta name="twitter:title" content="빛타로 🔮" />
+  <meta name="twitter:description" content="재회 타로, 속마음 타로 — 78장의 유니버셜 타로카드로 무료로 알아보세요." />
   <link rel="canonical" href="https://bittaro.cloud/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="robots" content="index, follow" />
@@ -22,40 +22,236 @@
   <meta name="application-name" content="빛타로" />
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
   <link rel="stylesheet" href="/style.css?v=3" />
-  <style>.nav-active-reunion { color: var(--gold) !important; background: rgba(245,158,11,0.12) !important; font-weight: 700; }</style>
   <meta name="google-adsense-account" content="ca-pub-5072294874294817">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5072294874294817"
      crossorigin="anonymous"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "빛타로 — 재회 타로",
+    "@type": "WebSite",
+    "name": "빛타로",
     "url": "https://bittaro.cloud/",
-    "description": "78장의 유니버셜 타로카드로 재회 가능성을 무료로 알아보세요. 카드 3장을 선택하면 확률과 상세 해석을 제공합니다.",
-    "applicationCategory": "EntertainmentApplication",
-    "operatingSystem": "Any",
+    "description": "78장의 유니버셜 타로카드로 재회 가능성과 상대방 속마음을 무료로 알아보세요.",
     "inLanguage": "ko-KR",
-    "isAccessibleForFree": true,
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "KRW"
-    },
     "publisher": {
       "@type": "Organization",
       "name": "빛타로"
     }
   }
   </script>
+  <style>
+    /* ── 랜딩 페이지 전용 스타일 ── */
+    .landing-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px 60px;
+      min-height: calc(100vh - 60px);
+    }
+
+    .landing-logo {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .landing-title {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .landing-sub {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .service-card {
+      display: block;
+      text-decoration: none;
+      background: var(--surface);
+      border-radius: 20px;
+      padding: 32px 28px 28px;
+      border: 1.5px solid var(--border);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      border-radius: inherit;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-card-reunion {
+      border-color: rgba(124, 58, 237, 0.4);
+    }
+    .service-card-reunion::before {
+      background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.12), transparent 70%);
+    }
+    .service-card-reunion:hover {
+      border-color: rgba(124, 58, 237, 0.75);
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.3);
+    }
+    .service-card-reunion:hover::before { opacity: 1; }
+
+    .service-card-heart {
+      border-color: rgba(219, 39, 119, 0.4);
+    }
+    .service-card-heart::before {
+      background: radial-gradient(circle at 30% 30%, rgba(219,39,119,0.12), transparent 70%);
+    }
+    .service-card-heart:hover {
+      border-color: rgba(219, 39, 119, 0.75);
+      box-shadow: 0 12px 40px rgba(219, 39, 119, 0.3);
+    }
+    .service-card-heart:hover::before { opacity: 1; }
+
+    .sc-icon {
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .sc-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .sc-badge-reunion {
+      background: rgba(124, 58, 237, 0.18);
+      color: #a78bfa;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+    }
+
+    .sc-badge-heart {
+      background: rgba(219, 39, 119, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(219, 39, 119, 0.3);
+    }
+
+    .sc-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .sc-question {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .sc-desc {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .sc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .sc-cta-reunion {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      color: white;
+      box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
+    }
+
+    .sc-cta-heart {
+      background: linear-gradient(135deg, #9d174d, #db2777);
+      color: white;
+      box-shadow: 0 4px 16px rgba(219, 39, 119, 0.35);
+    }
+
+    .service-card:hover .sc-cta {
+      transform: translateX(4px);
+    }
+
+    .sc-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .sc-feature {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 3px 9px;
+    }
+
+    .landing-footer-note {
+      margin-top: 36px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .service-cards { grid-template-columns: 1fr; max-width: 380px; }
+      .landing-wrap { padding: 28px 16px 48px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 사이트 헤더 내비게이션 -->
+  <!-- 사이트 헤더 -->
   <header class="site-header">
     <a href="/" class="site-logo">🔮 빛타로</a>
     <nav class="site-nav">
-      <a href="/" class="nav-active-reunion">재회 타로</a>
+      <a href="/jaehoe.html">재회 타로</a>
       <a href="/sokmaeul.html">속마음 타로</a>
       <a href="/about.html">서비스 소개</a>
       <a href="/privacy.html">개인정보처리방침</a>
@@ -63,156 +259,48 @@
     <button id="theme-toggle" class="btn-theme" aria-label="테마 전환">☀️</button>
   </header>
 
-  <!-- ① 웰컴 화면 -->
-  <section id="screen-welcome" class="screen active">
-    <div class="welcome-wrap">
-      <div class="orb">🔮</div>
-      <h1>그 사람과 재회할 수 있을까?</h1>
-      <p class="sub">78장의 유니버셜 타로카드로<br>두 사람의 재회 가능성을 알아보세요</p>
-      <p class="hint">마음속으로 그 사람을 떠올리며<br>이끌리는 카드 <strong>3장</strong>을 선택하세요</p>
-      <button id="btn-start" class="btn-cta">카드 선택 시작하기 →</button>
+  <!-- 랜딩 선택 화면 -->
+  <main class="landing-wrap">
+    <div class="landing-logo">🔮</div>
+    <h1 class="landing-title">빛타로</h1>
+    <p class="landing-sub">78장의 유니버셜 타로카드로<br>그 사람과의 인연을 들여다보세요</p>
+
+    <div class="service-cards">
+
+      <!-- 재회 타로 -->
+      <a href="/jaehoe.html" class="service-card service-card-reunion">
+        <span class="sc-icon">🔮</span>
+        <span class="sc-badge sc-badge-reunion">재회 확률 분석</span>
+        <div class="sc-title">재회 타로</div>
+        <div class="sc-question">"그 사람과 다시 만날 수 있을까?"</div>
+        <div class="sc-features">
+          <span class="sc-feature">재회 확률 %</span>
+          <span class="sc-feature">카드별 해석</span>
+          <span class="sc-feature">종합 메시지</span>
+        </div>
+        <div class="sc-desc">이끌리는 카드 3장을 고르면 두 사람의 재회 가능성과 현재 관계 에너지를 분석해드립니다.</div>
+        <span class="sc-cta sc-cta-reunion">시작하기 →</span>
+      </a>
+
+      <!-- 속마음 타로 -->
+      <a href="/sokmaeul.html" class="service-card service-card-heart">
+        <span class="sc-icon">💜</span>
+        <span class="sc-badge sc-badge-heart">속마음 감정 분석</span>
+        <div class="sc-title">속마음 타로</div>
+        <div class="sc-question">"그 사람은 지금 무슨 생각을 할까?"</div>
+        <div class="sc-features">
+          <span class="sc-feature">속마음 지수 %</span>
+          <span class="sc-feature">감정 유형 분석</span>
+          <span class="sc-feature">9가지 감정</span>
+        </div>
+        <div class="sc-desc">카드 3장으로 상대방의 현재 감정 상태와 속마음을 읽어드립니다. 그리움·미련·갈등 등을 분석합니다.</div>
+        <span class="sc-cta sc-cta-heart">시작하기 →</span>
+      </a>
+
     </div>
 
-    <div class="info-section">
-      <h2 class="info-title">타로카드로 재회 운세 보기</h2>
-      <div class="info-grid">
-        <div class="info-card">
-          <div class="info-icon">🃏</div>
-          <h3>유니버셜 타로 78장</h3>
-          <p>메이저 아르카나 22장과 마이너 아르카나 56장으로 구성된 정통 유니버셜 타로카드를 사용합니다. 각 카드는 수백 년의 역사를 가진 고유한 상징과 의미를 담고 있습니다.</p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">💕</div>
-          <h3>재회 전문 해석</h3>
-          <p>선택한 카드 3장의 에너지를 종합하여 재회 가능성을 분석합니다. 긍정 카드와 부정 카드의 균형, 각 카드의 키워드를 바탕으로 현재 두 사람의 관계 흐름을 읽어드립니다.</p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">✨</div>
-          <h3>직관으로 선택하세요</h3>
-          <p>타로는 분석이 아닌 직관입니다. 78장의 카드 중 마음이 자연스럽게 이끌리는 3장을 고르세요. 의식적으로 고르는 것이 아닌, 무의식이 선택하는 카드가 진정한 메시지를 담고 있습니다.</p>
-        </div>
-      </div>
-
-      <div class="tarot-guide">
-        <h2>타로카드 수트(Suit) 안내</h2>
-        <div class="suit-grid">
-          <div class="suit-item suit-major">
-            <strong>메이저 아르카나</strong>
-            <span>운명의 큰 흐름과 인생의 중요한 전환점을 나타냅니다</span>
-          </div>
-          <div class="suit-item suit-cups">
-            <strong>컵 (Cups) 💧</strong>
-            <span>감정, 사랑, 관계, 직관을 상징합니다. 연애 운과 깊은 연관이 있습니다</span>
-          </div>
-          <div class="suit-item suit-wands">
-            <strong>완드 (Wands) 🔥</strong>
-            <span>열정, 행동, 창의력, 의지를 나타냅니다. 재회를 위한 추진력과 관련됩니다</span>
-          </div>
-          <div class="suit-item suit-swords">
-            <strong>소드 (Swords) ⚔️</strong>
-            <span>생각, 갈등, 진실, 소통을 상징합니다. 두 사람 사이의 감정적 상처를 나타낼 수 있습니다</span>
-          </div>
-          <div class="suit-item suit-pentacles">
-            <strong>펜타클 (Pentacles) 💎</strong>
-            <span>현실, 안정, 물질적 기반을 나타냅니다. 관계의 현실적 토대와 미래 가능성을 봅니다</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-section">
-        <h2>자주 묻는 질문 (FAQ)</h2>
-
-        <div class="faq-item">
-          <h3>타로카드 점은 어떻게 작동하나요?</h3>
-          <p>타로카드는 78장의 카드로 구성된 상징 체계입니다. 각 카드는 오랜 역사를 통해 다듬어진 고유한 의미와 에너지를 담고 있으며, 카드를 선택하는 행위 자체가 현재의 무의식적 상태와 에너지를 반영한다고 알려져 있습니다. 빛타로는 직관적으로 이끌리는 카드 3장을 선택하는 방식으로, 두 사람 사이의 재회 가능성을 분석합니다.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>재회 타로 결과를 어떻게 해석해야 하나요?</h3>
-          <p>재회 타로 결과는 현재의 에너지 흐름과 가능성을 나타냅니다. 확률이 높다고 해서 반드시 재회가 이루어진다는 보장은 없으며, 낮다고 해서 절대로 불가능한 것도 아닙니다. 카드별 해석을 참고하여 현재 두 사람 사이의 감정적 흐름을 이해하고, 앞으로 어떤 태도와 행동이 필요한지 성찰하는 데 활용하세요.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>같은 카드를 여러 번 선택해도 되나요?</h3>
-          <p>매 회 78장의 카드 중 3장을 새롭게 선택하게 됩니다. 같은 카드가 다시 나오더라도 그것 자체가 의미 있는 메시지일 수 있습니다. 타로는 반복적으로 같은 메시지를 보내기도 합니다. 다시 하기 버튼으로 언제든지 새로운 리딩을 받을 수 있습니다.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>메이저 아르카나 카드가 나오면 어떤 의미인가요?</h3>
-          <p>메이저 아르카나(0번 바보~21번 세계) 22장은 인생의 큰 흐름과 중요한 전환점을 나타내는 카드입니다. 마이너 아르카나에 비해 더욱 강력하고 근본적인 에너지를 담고 있으며, 재회 타로에서 메이저 아르카나가 등장할 경우 두 사람의 관계가 단순한 인연이 아닌 운명적 연결임을 암시하는 경우가 많습니다.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>타로카드와 실제 연애 상담의 차이는 무엇인가요?</h3>
-          <p>타로카드는 자기 성찰과 오락을 위한 도구로, 전문 상담사의 연애 상담이나 심리 치료를 대체하지 않습니다. 타로는 내면의 목소리에 귀 기울이고, 현재 상황을 새로운 관점에서 바라보는 데 도움을 줍니다. 심각한 감정적 어려움이 있다면 전문 상담사의 도움을 받으시기를 권장합니다.</p>
-        </div>
-
-        <div class="faq-item">
-          <h3>무료로 이용할 수 있나요?</h3>
-          <p>빛타로의 재회 타로 서비스는 완전 무료입니다. 회원가입이나 로그인 없이 바로 이용하실 수 있으며, 횟수 제한 없이 원하는 만큼 카드를 선택하실 수 있습니다.</p>
-        </div>
-      </div>
-
-      <p class="disclaimer">본 서비스는 오락 및 자기 성찰의 목적으로 제공됩니다. 타로카드 결과는 참고용이며, 중요한 결정은 전문가와 상담하시기 바랍니다.</p>
-    </div>
-  </section>
-
-  <!-- ② 카드 선택 화면 -->
-  <section id="screen-select" class="screen">
-    <div class="select-top">
-      <button class="btn-nav" id="btn-back">← 처음으로</button>
-      <span class="select-title">마음이 이끄는 카드 <strong>3장</strong>을 고르세요</span>
-      <span id="sel-count" class="sel-count">0 / 3</span>
-    </div>
-
-    <div id="cards-grid" class="cards-grid"></div>
-
-    <div class="select-footer">
-      <div class="preview-row">
-        <div class="preview-slot" id="prev-0"><span class="prev-empty">?</span></div>
-        <div class="preview-slot" id="prev-1"><span class="prev-empty">?</span></div>
-        <div class="preview-slot" id="prev-2"><span class="prev-empty">?</span></div>
-      </div>
-      <button id="btn-result" class="btn-cta" disabled>결과 보기 →</button>
-    </div>
-  </section>
-
-  <!-- ③ 결과 화면 -->
-  <section id="screen-result" class="screen">
-    <div class="result-wrap">
-      <div class="result-top">
-        <button class="btn-nav" id="btn-restart">↺ 다시 하기</button>
-        <h2>🔮 재회 타로 결과</h2>
-      </div>
-
-      <div id="result-cards" class="result-cards"></div>
-
-      <div class="prob-box">
-        <div class="prob-title">재회 확률</div>
-        <div class="prob-track">
-          <div id="prob-bar" class="prob-bar"></div>
-        </div>
-        <div id="prob-pct" class="prob-pct">0%</div>
-        <div id="prob-msg" class="prob-msg"></div>
-      </div>
-
-      <div id="balance" class="balance-row"></div>
-
-      <h3 class="sec-title">카드별 해석</h3>
-      <div id="card-readings" class="card-readings"></div>
-
-      <h3 class="sec-title">종합 해석</h3>
-      <div id="overall" class="overall-box"></div>
-
-      <div class="share-wrap">
-        <button id="btn-share" class="btn-share">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 5.805 2 10.5c0 2.9 1.6 5.484 4.1 7.13L5 21l4.39-2.31C10.2 18.88 11.09 19 12 19c5.523 0 10-3.806 10-8.5S17.523 2 12 2z"/></svg>
-          카카오톡으로 공유하기 (복채)
-        </button>
-        <div id="share-msg" class="share-msg hidden"></div>
-      </div>
-    </div>
-  </section>
+    <p class="landing-footer-note">모든 서비스는 완전 무료 · 회원가입 불필요 · 횟수 제한 없음</p>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -227,6 +315,18 @@
     </div>
   </footer>
 
-  <script type="module" src="/main.js?v=4"></script>
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('tarot-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('tarot-theme', next);
+      themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
