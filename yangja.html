@@ -82,8 +82,8 @@
       border: 1.5px dashed rgba(245,158,11,0.3);
       border-radius: 8px;
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 4px;
+      align-items: center; justify-content: space-between;
+      padding: 8px 4px 6px;
       transition: all 0.25s;
       background: var(--surface2);
       font-size: 0.72rem;
@@ -343,11 +343,11 @@
 
     <div class="select-footer">
       <div class="preview-row-5">
-        <div class="preview-slot" id="prev-0"><div class="mini-pos-label" style="color:#a78bfa;opacity:0.5">🔮</div><span class="prev-empty">?</span></div>
-        <div class="preview-slot" id="prev-1"><div class="mini-pos-label" style="color:#8b5cf6;opacity:0.5">💜</div><span class="prev-empty">?</span></div>
-        <div class="preview-slot" id="prev-2"><div class="mini-pos-label" style="color:#7c3aed;opacity:0.5">🌹</div><span class="prev-empty">?</span></div>
-        <div class="preview-slot" id="prev-3"><div class="mini-pos-label" style="color:#f59e0b;opacity:0.5">🌟</div><span class="prev-empty">?</span></div>
-        <div class="preview-slot" id="prev-4"><div class="mini-pos-label" style="color:#fb923c;opacity:0.5">🌸</div><span class="prev-empty">?</span></div>
+        <div class="preview-slot" id="prev-0"><span class="prev-empty">?</span><div class="mini-pos-label" style="color:#a78bfa;opacity:0.5">🔮</div></div>
+        <div class="preview-slot" id="prev-1"><span class="prev-empty">?</span><div class="mini-pos-label" style="color:#8b5cf6;opacity:0.5">💜</div></div>
+        <div class="preview-slot" id="prev-2"><span class="prev-empty">?</span><div class="mini-pos-label" style="color:#7c3aed;opacity:0.5">🌹</div></div>
+        <div class="preview-slot" id="prev-3"><span class="prev-empty">?</span><div class="mini-pos-label" style="color:#f59e0b;opacity:0.5">🌟</div></div>
+        <div class="preview-slot" id="prev-4"><span class="prev-empty">?</span><div class="mini-pos-label" style="color:#fb923c;opacity:0.5">🌸</div></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px;font-size:0.72rem;color:var(--text-muted)">
         <span>🔮 현재상황</span><span>💜 재회과정</span><span>🌹 재회결과</span><span>🌟 새인연과정</span><span>🌸 새인연결과</span>

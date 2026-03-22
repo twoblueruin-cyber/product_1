@@ -335,17 +335,17 @@ function updateSelectionUI() {
       const pos = POSITIONS[i];
       slot.className = `preview-slot filled suit-${c.suit}`;
       slot.innerHTML = `
-        <div class="mini-pos-label" style="color:${pos.color}">${pos.icon}</div>
         <div class="mini-card">
           <span class="mini-emoji">${c.emoji}</span>
           <span class="mini-name">${c.name}</span>
-        </div>`;
+        </div>
+        <div class="mini-pos-label" style="color:${pos.color}">${pos.icon}</div>`;
     } else {
       const pos = POSITIONS[i];
       slot.className = 'preview-slot';
       slot.innerHTML = `
-        <div class="mini-pos-label" style="color:${pos.color};opacity:0.5">${pos.icon}</div>
-        <span class="prev-empty">?</span>`;
+        <span class="prev-empty">?</span>
+        <div class="mini-pos-label" style="color:${pos.color};opacity:0.5">${pos.icon}</div>`;
     }
   }
 
